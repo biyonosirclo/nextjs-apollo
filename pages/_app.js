@@ -1,7 +1,7 @@
-import Layout from '../components/Layout.js'
+import Layout from '@/components/Layout.js'
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/globals.css'
+import '@/styles/globals.css'
 import { ApolloClient,InMemoryCache,ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({

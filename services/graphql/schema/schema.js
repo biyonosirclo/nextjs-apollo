@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const GET_CATEGORIES = gql`
+export  const GET_CATEGORIES = gql`
 
   query GetCategories {
     categories(filters:{}){
@@ -14,7 +14,7 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
-export const GET_CATEGORIES_BY_ID = gql`
+export  const GET_CATEGORIES_BY_ID = gql`
 
   query GetCategoriesById ($categoryId:Int){
     category(id: $categoryId){
@@ -49,7 +49,7 @@ export const GET_CATEGORIES_BY_ID = gql`
     
 `;
 
-export const GET_PRODUCT_BY_SKU = gql`
+export  const GET_PRODUCT_BY_SKU = gql`
   query GetProductBySku ($sku:String){
     products(
       search: ""
@@ -90,7 +90,7 @@ export const GET_PRODUCT_BY_SKU = gql`
 `;
 
 
-export const POST_SUBCRIBE =  gql`
+export  const POST_SUBCRIBE =  gql`
   mutation PostSubcribe($email: String!) {
     
     subscribe(input: {email: $email}) {

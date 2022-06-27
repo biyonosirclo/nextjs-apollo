@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import Link from 'next/link'
 import Spinner from '@/components/Spinner';
-import { GET_CATEGORIES } from './schema';
+import { GET_CATEGORIES } from '@/services/graphql/schema/schema';
 import Head from 'next/head';
 import Error from '@/components/Error';
 

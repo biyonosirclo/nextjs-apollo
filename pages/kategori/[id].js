@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { GET_CATEGORIES_BY_ID } from './schema';
+import { GET_CATEGORIES_BY_ID } from '@/services/graphql/schema/schema';
 import Spinner from '@/components/Spinner';
 import Error from '@/components/Error';
 import Image from 'next/image';
@@ -29,8 +29,8 @@ function KategoriByID() {
         <Head>
             <title>Apollo : { data && (data['category']['name'])}</title>
         </Head>
-        <div className='container'>
-            <h3 className='mb-5'> Kategori Produk '{ data && (data['category']['name'])}'</h3>
+        <div className="container">
+            <h3 className="mb-5"> Kategori Produk { data && (data['category']['name'])}</h3>
             <div className="row">
                 {
                     data && data.category.products.items.length > 0 ?(
@@ -43,14 +43,17 @@ function KategoriByID() {
                                     </Link>
                                     <div className="card-body">
                                         <Link href={`/produk/${item.sku}`}>
-                                            <a><h6 className='card-title text-center' >{item.name}</h6></a>
+                                            <a><h6 className="card-title text-center" >{item.name}</h6></a>
                                             
                                         </Link>
                                     </div>
                                     <div className="card-footer">
                                         <div className="d-flex justify-content-between">
-                                        <small>{item.price_range.minimum_price.regular_price.currency}. {item.price_range.minimum_price.regular_price.value}</small>
-                                            <small>Rating. {item.rating_summary}/100</small>
+                                            <small>
+                                            {item.price_range.minimum_price.regular_price.currency} 
+                                            {item.price_range.minimum_price.regular_price.value}
+                                            </small>
+                                            <small>Rating {item.rating_summary}/100</small>
                                         </div>
                                         
 
@@ -59,7 +62,7 @@ function KategoriByID() {
                             </div>
                         ))
                     ):(
-                        <Error message='Belum ada produk di kategori ini' />
+                        <Error message="Belum ada produk di kategori ini" />
                     )
                 }
             </div>

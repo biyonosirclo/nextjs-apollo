@@ -1,5 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
-import { POST_SUBCRIBE } from '../pages/kategori/schema';
+import { POST_SUBCRIBE } from '@/services/graphql/schema/schema';
 import Succes from './Success';
 import Error from './Error';
 import Spinner from './Spinner';
